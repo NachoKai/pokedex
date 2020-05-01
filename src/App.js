@@ -11,10 +11,10 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/modal">
+        <Route path="/modal" exact>
           <Modal />
         </Route>
-        <Route path="/">
+        <Route path="/" exact>
           <div className="App">
             <Navbar />
             <Header />
