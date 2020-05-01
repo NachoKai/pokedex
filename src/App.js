@@ -5,15 +5,16 @@ import Navbar from "./components/Navbar/Navbar";
 import Card from "./components/Card/Card";
 import Header from "./components/Header/Header";
 import Modal from "./components/Modal/Modal";
+import Error from "./components/Error/Error";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/modal">
+        <Route path="/pokedex/modal">
           <Modal />
         </Route>
-        <Route path="/" exact>
+        <Route path="/pokedex/" exact>
           <div className="App">
             <Navbar />
             <Header />
@@ -110,6 +111,9 @@ function App() {
               />
             </div>
           </div>
+        </Route>
+        <Route>
+          <Error />
         </Route>
       </Switch>
     </Router>
