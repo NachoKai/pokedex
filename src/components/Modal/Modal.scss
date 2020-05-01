@@ -142,3 +142,13 @@
   font-weight: 900;
   margin-top: 1rem;
 }
+
+@media all and (min-width: 1024px) {
+}
+@media all and (min-width: 768px) {
+}
+@media all and (min-width: 480px) {
+  .modal-down {
+    padding: 2rem;
+  }
+}

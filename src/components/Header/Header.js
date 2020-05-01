@@ -16,7 +16,7 @@ const Header = () => {
         <div className="header_search-bar">
           <div className="header_search-input">
             <i className="fas fa-search"></i>
-            <input placeholder="What Pókemon are you looking for?" />
+            <input placeholder="Which Pókemon are you looking for?" />
           </div>
         </div>
       </div>
