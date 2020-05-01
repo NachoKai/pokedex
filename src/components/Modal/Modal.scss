@@ -1,7 +1,7 @@
 .modal {
   margin: 0 auto;
   max-width: 600px;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   background-color: #495057;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@
 
 .modal-down {
   background-color: #eee;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 0.5rem;
 }
 
@@ -138,6 +138,8 @@
 
 .modal-data-title,
 .modal-training-title {
+  border-top: 1px solid #d4d4d4;
+  padding: 1rem 0 0 0;
   font-size: 1.1rem;
   font-weight: 900;
   margin-top: 1rem;
@@ -150,5 +152,8 @@
 @media all and (min-width: 480px) {
   .modal-down {
     padding: 2rem;
+  }
+  .modal-up {
+    padding: 1rem;
   }
 }

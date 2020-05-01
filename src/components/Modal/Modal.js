@@ -9,9 +9,6 @@ const Modal = () => {
           <i class="fas fa-arrow-left"></i>
         </div>
         <div className="modal-up_mid">
-          <div className="modal-img">
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" />
-          </div>
           <div className="modal-info">
             <div className="modal-info-id">
               <span>#004</span>
@@ -33,6 +30,9 @@ const Modal = () => {
                 <span></span>
               </div>
             </div>
+          </div>
+          <div className="modal-img">
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" />
           </div>
         </div>
         <div className="modal-up_down">
