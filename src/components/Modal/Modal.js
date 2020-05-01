@@ -6,7 +6,7 @@ const Modal = () => {
     <div className="modal">
       <div className="modal-up">
         <div className="modal-up_top">
-          <a href="/pokedex/">
+          <a href="/">
             <i className="fas fa-arrow-left"></i>
           </a>
         </div>

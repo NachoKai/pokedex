@@ -11,10 +11,10 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/pokedex/modal">
+        <Route path="/modal">
           <Modal />
         </Route>
-        <Route path="/pokedex" exact>
+        <Route path="/">
           <div className="App">
             <Navbar />
             <Header />
