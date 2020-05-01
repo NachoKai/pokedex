@@ -15,7 +15,7 @@ const Navbar = () => {
           <i className="fas fa-sliders-h"></i>
         </div>
         <div className="navbar_option">
-          <i class="fas fa-moon"></i>
+          <i className="fas fa-moon"></i>
         </div>
       </div>
     </div>

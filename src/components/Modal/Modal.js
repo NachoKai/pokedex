@@ -6,7 +6,7 @@ const Modal = () => {
     <div className="modal">
       <div className="modal-up">
         <div className="modal-up_top">
-          <i class="fas fa-arrow-left"></i>
+          <i className="fas fa-arrow-left"></i>
         </div>
         <div className="modal-up_mid">
           <div className="modal-info">
