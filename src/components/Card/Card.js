@@ -19,12 +19,14 @@ const Card = (props) => {
           <div className="card-data-types">
             <div className="card-data-typeA">
               <span>
-                <i class="fas fa-leaf"></i> Grass
+                <i className={props.typeAicon}></i>
+                {props.typeA}
               </span>
             </div>
             <div className="card-data-typeB">
               <span>
-                <i class="fas fa-skull-crossbones"></i>Poison
+                <i className={props.typeBicon}></i>
+                {props.typeB}
               </span>
             </div>
           </div>

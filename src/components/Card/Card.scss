@@ -1,3 +1,5 @@
+@import "../../App.scss";
+
 .card-container {
   padding: 0.5rem;
   display: flex;
@@ -5,34 +7,41 @@
 
 .card {
   width: 100%;
-  max-width: 300px;
+  min-width: 270px;
+  max-width: 350px;
   margin: 0.5rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  width: 100%;
-  background-color: #8bbe8a;
+  padding: 1rem 0 1rem 1rem;
+  background-color: gray;
   border-radius: 1rem;
   max-height: 90px;
   transition: all 0.2s ease;
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 }
 
 .card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   top: -10px;
+  height: auto;
+  width: 100%;
 
   img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: auto;
-    max-width: 160px;
-    min-width: 160px;
+    max-width: 130px;
     z-index: 0;
   }
 }
@@ -48,14 +57,13 @@
 .card-data-name {
   span {
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: #fff;
   }
 }
 
 .card-data-types {
   align-items: center;
-  justify-content: center;
   margin: 0.5rem 0;
   display: flex;
 
@@ -74,7 +82,7 @@
     font-size: 0.8rem;
     padding: 0.3rem;
     margin: 0 0.2rem 0 0;
-    background-color: #62b958;
+    background-color: #212529;
     color: #fff;
     border-radius: 0.4rem;
   }
@@ -90,7 +98,7 @@
     font-size: 0.8rem;
     padding: 0.3rem;
     margin: 0 0 0 0.2rem;
-    background-color: #a552cc;
+    background-color: #495057;
     color: #fff;
     border-radius: 0.4rem;
   }
@@ -98,10 +106,9 @@
 
 .card-img-circle {
   display: flex;
-  justify-content: center;
   align-items: center;
-  max-height: 130px;
-  max-width: 130px;
+  justify-content: center;
+  height: auto;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   text-align: center;
@@ -118,8 +125,86 @@
 /* MQ */
 
 @media all and (min-width: 1024px) {
+  .card-data-name {
+    span {
+      font-size: 1.6rem;
+    }
+  }
+  .card-data-kanji {
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  .card {
+    min-width: 300px;
+  }
+
+  .card-img {
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      max-width: 150px;
+      z-index: 0;
+    }
+  }
 }
 @media all and (min-width: 768px) {
+  .card-data-name {
+    span {
+      font-size: 1.6rem;
+    }
+  }
+  .card-data-kanji {
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  .card {
+    min-width: 300px;
+  }
+
+  .card-img {
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      max-width: 150px;
+      z-index: 0;
+    }
+  }
 }
 @media all and (min-width: 480px) {
+  .card-data-name {
+    span {
+      font-size: 1.6rem;
+    }
+  }
+  .card-data-kanji {
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  .card {
+    min-width: 300px;
+  }
+
+  .card-img {
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      max-width: 150px;
+      z-index: 0;
+    }
+  }
 }

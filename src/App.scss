@@ -1,5 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
+$card-text: #ffffff;
+$background: #262626;
+$water: #718bf1;
+$fire: #e28145;
+$normal: #aca981;
+$fighting: #bf3228;
+$poison: #a042a3;
+$ground: #e2c06b;
+$flying: #a792ee;
+$rock: #b6a038;
+$bug: #aab922;
+$ghost: #705a98;
+$steel: #b7b8ce;
+$grass: #79cb4f;
+$electric: #f8d02e;
+$psychic: #f55a86;
+$ice: #9bd8d8;
+$dragon: #6b3af8;
+$dark: #705847;
+$fairy: #ee9bae;
+$unknown: #68a192;
+
+#loader {
+  position: absolute;
+  background: #fff;
+  left: 50%;
+  top: 50%;
+  z-index: 99;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #db3434;
+  width: 200px;
+  height: 200px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
 header,
 body {
   font-family: "Lato", sans-serif;
@@ -19,6 +59,8 @@ body {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
