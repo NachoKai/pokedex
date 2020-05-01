@@ -3,6 +3,7 @@ import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
 import Card from "./components/Card/Card";
 import Header from "./components/Header/Header";
+import Modal from "./components/Modal/Modal";
 
 function App() {
   return (
@@ -101,6 +102,8 @@ function App() {
           img="https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png"
         />
       </div>
+      ~ Modal Example
+      <Modal />
     </div>
   );
 }
