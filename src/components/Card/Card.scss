@@ -1,5 +1,9 @@
 @import "../../App.scss";
 
+a {
+  text-decoration: none;
+}
+
 .card-container {
   padding: 0.5rem;
   display: flex;

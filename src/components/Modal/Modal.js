@@ -6,7 +6,9 @@ const Modal = () => {
     <div className="modal">
       <div className="modal-up">
         <div className="modal-up_top">
-          <i className="fas fa-arrow-left"></i>
+          <a href="/">
+            <i className="fas fa-arrow-left"></i>
+          </a>
         </div>
         <div className="modal-up_mid">
           <div className="modal-info">
@@ -32,7 +34,10 @@ const Modal = () => {
             </div>
           </div>
           <div className="modal-img">
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" />
+            <img
+              alt=""
+              src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png"
+            />
           </div>
         </div>
         <div className="modal-up_down">
