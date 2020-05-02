@@ -3,7 +3,7 @@ import "./Card.scss";
 
 const Card = (props) => {
   return (
-    <a href="/pokedex/modal">
+    <a href="/modal">
       <div className="card-container">
         <div className="card">
           <div className="card-data">
