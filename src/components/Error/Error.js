@@ -1,9 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Error.scss";
 
 const Error = () => {
   return (
     <div className="error">
+      <div>
+        <Link to="/">
+          <i className="fas fa-arrow-left"></i>
+        </Link>
+      </div>
       <span className="error-text">4</span>
       <img
         className="error-img"

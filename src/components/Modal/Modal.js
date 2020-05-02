@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Modal.scss";
 
 const Modal = () => {
@@ -6,9 +7,9 @@ const Modal = () => {
     <div className="modal">
       <div className="modal-up">
         <div className="modal-up_top">
-          <a href="/">
+          <Link to="/">
             <i className="fas fa-arrow-left"></i>
-          </a>
+          </Link>
         </div>
         <div className="modal-up_mid">
           <div className="modal-info">
