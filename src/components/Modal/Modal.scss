@@ -148,10 +148,6 @@ a {
   }
 }
 
-.modal-description {
-  padding: 1rem 0 0 0;
-}
-
 .modal-data-title,
 .modal-training-title {
   border-top: 1px solid #d4d4d4;
@@ -167,9 +163,9 @@ a {
 }
 @media all and (min-width: 480px) {
   .modal-down {
-    padding: 2rem 2rem 0.5rem 2rem;
+    padding: 2rem;
   }
   .modal-up {
-    padding: 1rem 1rem 0.5rem 1rem;
+    padding: 1rem 0;
   }
 }
