@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/pokedex/modal" basename="/pokedex">
+        <Route path="/modal" basename="/pokedex">
           <Modal />
         </Route>
         <Route path="/" basename="/pokedex">
