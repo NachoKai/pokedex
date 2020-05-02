@@ -14,7 +14,7 @@ function App() {
         <Route path="/modal">
           <Modal />
         </Route>
-        <Route path="/">
+        <Route path="/" basename="/pokedex">
           <div className="App">
             <Navbar />
             <Header />
