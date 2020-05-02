@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Card.scss";
 
 const Card = (props) => {
   return (
-    <a href="/pokedex/modal">
+    <Link to="/modal">
       <div className="card-container">
         <div className="card">
           <div className="card-data">
@@ -40,7 +41,7 @@ const Card = (props) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
