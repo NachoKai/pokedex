@@ -13,6 +13,7 @@ const Error = () => {
       <span className="error-text">4</span>
       <img
         className="error-img"
+        alt="Pokeball"
         src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c31f.png"
       />
       <span className="error-text">4</span>

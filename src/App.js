@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
 import Card from "./components/Card/Card";
@@ -70,7 +70,7 @@ function App() {
                 img="https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png"
               />
               <Card
-                name="Charinzard"
+                name="Charizard"
                 id="006"
                 kanji="リザードン"
                 typeA="Fire"

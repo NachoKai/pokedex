@@ -3,7 +3,7 @@ a {
 }
 
 .modal {
-  margin: 2rem auto;
+  margin: 0.5rem auto;
   max-width: 600px;
   border-radius: 1rem;
   background-color: #495057;
@@ -12,7 +12,7 @@ a {
 }
 
 .modal-up {
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   display: flex;
   align-content: center;
   justify-content: flex-start;
@@ -20,6 +20,8 @@ a {
 }
 
 .modal-up_top {
+  padding: 0 0.5rem;
+
   .fa-arrow-left {
     color: #fff;
     font-size: 1.5rem;
@@ -49,6 +51,7 @@ a {
 }
 
 .modal-up_down {
+  flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -56,6 +59,7 @@ a {
 
 .tab {
   color: #868e96;
+  font-size: 1.1rem;
   font-weight: bold;
 
   &:hover {
@@ -72,11 +76,19 @@ a {
   }
 }
 
+.modal-up_down-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .modal-info-types {
   display: flex;
 }
 
 .modal-up_mid {
+  padding: 0 0.5rem;
   color: #eee;
   display: flex;
   align-items: center;
@@ -155,9 +167,9 @@ a {
 }
 @media all and (min-width: 480px) {
   .modal-down {
-    padding: 2rem;
+    padding: 2rem 2rem 0.5rem 2rem;
   }
   .modal-up {
-    padding: 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
   }
 }

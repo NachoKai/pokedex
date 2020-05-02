@@ -1,5 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink,
+} from "react-router-dom";
+import About from "./Tabs/About";
+import Stats from "./Tabs/Stats";
+import Evolution from "./Tabs/Evolution";
 import "./Modal.scss";
 
 const Modal = () => {
@@ -42,57 +51,35 @@ const Modal = () => {
           </div>
         </div>
         <div className="modal-up_down">
-          <span className="tab active">About</span>
-          <span className="tab">Stats</span>
-          <span className="tab">Evolution</span>
-        </div>
-      </div>
+          <div className="modal-up_down-links">
+            <NavLink to="/modal/about" className="tab" activeClassName="active">
+              About
+            </NavLink>
+            <NavLink to="/modal/stats" className="tab" activeClassName="active">
+              Stats
+            </NavLink>
+            <NavLink
+              to="/modal/evolution"
+              className="tab"
+              activeClassName="active"
+            >
+              Evolution
+            </NavLink>
+          </div>
 
-      <div className="modal-down">
-        <div className="modal-description">
-          The flame that burns at the tip of its tail is an indication of its
-          emotions. The flame wavers when Charmander is enjoying itself. If the
-          Pokémon becomes enraged, the flame burns fiercely.
-        </div>
-        <div className="modal-data">
-          <div className="modal-data-title">Pokedex Data</div>
-          <div className="modal-data-info">
-            <p>
-              <b>Species: </b>Lizard Pokemon
-            </p>
-            <p>
-              <b>Height: </b>0.6m
-            </p>
-            <p>
-              <b>Weight: </b>8.5kg
-            </p>
-            <p>
-              <b>Abilities: </b>Blaze
-            </p>
-            <p>
-              <b>Weaknesses: </b>icon icon icon
-            </p>
-          </div>
-        </div>
-        <div className="modal-training">
-          <div className="modal-training-title">Training</div>
-          <div className="modal-training-info">
-            <p>
-              <b>EV Yield: </b> 1 Speed
-            </p>
-            <p>
-              <b>Catch Rate: </b> 45
-            </p>
-            <p>
-              <b>Base Friendship: </b>70 (Normal)
-            </p>
-            <p>
-              <b>Base Exp: </b>62
-            </p>
-            <p>
-              <b>Growth Rate: </b>Medium Slow
-            </p>
-          </div>
+          <Router>
+            <Switch>
+              <Route path="/modal/evolution">
+                <Evolution />
+              </Route>
+              <Route path="/modal/stats">
+                <Stats />
+              </Route>
+              <Route path="/modal/about">
+                <About />
+              </Route>
+            </Switch>
+          </Router>
         </div>
       </div>
     </div>
