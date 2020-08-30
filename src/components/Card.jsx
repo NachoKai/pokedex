@@ -114,7 +114,7 @@ const CardImgCircle = styled.div`
 	align-items: center;
 	justify-content: center;
 	height: auto;
-	background-color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(238, 238, 238, 0.6);
 	border-radius: 50%;
 	text-align: center;
 `;
