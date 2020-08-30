@@ -119,16 +119,6 @@ const CardImgCircle = styled.div`
 	text-align: center;
 `;
 
-// const CardDataTypeB = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: auto;
-//   background-color: rgba(255, 255, 255, 0.6);
-//   border-radius: 50%;
-//   text-align: center;
-// `
-
 const CardDataKanji = styled.div`
 	span {
 		color: #ffffffb6;
@@ -136,58 +126,6 @@ const CardDataKanji = styled.div`
 		width: 200px;
 	}
 `;
-
-// /* MQ */
-
-// @media all and (min-width: 1024px) {
-//   .card-data-name {
-//     span {
-//       font-size: 1.6rem;
-//     }
-//   }
-//   .card-data-kanji {
-//     span {
-//       font-size: 1rem;
-//     }
-//   }
-
-//   .card {
-//     min-width: 300px;
-//   }
-// }
-// @media all and (min-width: 768px) {
-//   .card-data-name {
-//     span {
-//       font-size: 1.6rem;
-//     }
-//   }
-//   .card-data-kanji {
-//     span {
-//       font-size: 1rem;
-//     }
-//   }
-
-//   .card {
-//     min-width: 300px;
-//   }
-// }
-
-// @media all and (min-width: 480px) {
-//   .card-data-name {
-//     span {
-//       font-size: 1.6rem;
-//     }
-//   }
-//   .card-data-kanji {
-//     span {
-//       font-size: 1rem;
-//     }
-//   }
-
-//   .card {
-//     min-width: 300px;
-//   }
-// }
 
 // .type-water {
 //   background-color: $water;

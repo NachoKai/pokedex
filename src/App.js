@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.scss";
@@ -8,26 +9,31 @@ import Header from "../src/components/Header";
 import Modal from "../src/components/Modal";
 import Error from "../src/components/Error";
 
+const CardContainer = styled.div`
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 1000px;
+`;
+
 function App() {
-	const [result, setResult] = useState([]);
 	const [pokemon, setPokemon] = useState([]);
 	const [load, setLoad] = useState("true");
 
 	useEffect(() => {
-		const arr = [];
-		fetch("https://pokeapi.co/api/v2/pokemon/?limit=50")
+		fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
 			.then(res => res.json())
 			.then(data =>
-				setResult(
-					data.results.map(item => {
-						fetch(item.url)
-							.then(res => res.json())
-							.then(allpokemon => arr.push(allpokemon));
-						setPokemon(arr);
-					})
-				)
+				data.results.map(item => {
+					fetch(item.url)
+						.then(res => res.json())
+						.then(allPokemon => pokemon.push(allPokemon));
+					return setPokemon(pokemon);
+				})
 			);
-	}, []);
+	}, [pokemon]);
 
 	const handleNumber = num => {
 		if (num.toString().split("").length === 1) {
@@ -53,21 +59,21 @@ function App() {
 		setSearchFields(event.target.value);
 	};
 
-	const filteredPokemons = pokemon.filter(monster =>
-		monster.name.toLowerCase().includes(searchField.toLowerCase())
+	const filteredPokemons = pokemon.filter(p =>
+		p.name.toLowerCase().includes(searchField.toLowerCase())
 	);
 
 	return (
 		<Router>
 			<Switch>
 				<Route path='/modal' basename='/pokedex'>
-					<Modal />
+					<Modal pokemon={pokemon} handleNumber={handleNumber} />
 				</Route>
 				<Route path='/' basename='/pokedex'>
 					<div className='App'>
 						<Navbar />
 						<Header pokemon={pokemon} onSearchChange={onSearchChange} />
-						<div className='card-cont'>
+						<CardContainer>
 							{load ? (
 								<p>Loading...</p>
 							) : (
@@ -89,7 +95,7 @@ function App() {
 									);
 								})
 							)}
-						</div>
+						</CardContainer>
 					</div>
 				</Route>
 				<Route basename='/pokedex'>

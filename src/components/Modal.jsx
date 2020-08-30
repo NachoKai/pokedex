@@ -79,11 +79,11 @@ const ModalImg = styled.div`
 	}
 `;
 
-const ModalDown = styled.div`
-	background-color: #eee;
-	border-radius: 1rem;
-	padding: 0.5rem;
-`;
+// const ModalDown = styled.div`
+// 	background-color: #eee;
+// 	border-radius: 1rem;
+// 	padding: 0.5rem;
+// `;
 
 const ModalUpDown = styled.div`
 	flex-direction: column;
@@ -160,7 +160,7 @@ const ModalInfoTypeB = styled.div`
 	}
 `;
 
-const Modal = () => {
+const Modal = ({ pokemon, handleNumber }) => {
 	return (
 		<Container>
 			<ModalUp>
@@ -172,28 +172,33 @@ const Modal = () => {
 				<ModalUpMid>
 					<div className='modal-info'>
 						<div className='modal-info-id'>
-							<span>#004</span>
+							<span>#{pokemon.id}</span>
 						</div>
 						<ModalInfoName>
-							<span>Charmander</span>
+							<span>{pokemon.name}</span>
 						</ModalInfoName>
 						<ModalInfoKanji>
 							<span>ヒトカゲ</span>
 						</ModalInfoKanji>
 						<ModalInfoTypes>
 							<ModalInfoTypeA>
-								<span>
-									<i className='fas fa-fire-alt'></i>
-									Fire
-								</span>
+								<span>{pokemon.types && pokemon.types[0].type.name.toUpperCase()}</span>
 							</ModalInfoTypeA>
-							<ModalInfoTypeA>
-								<span></span>
-							</ModalInfoTypeA>
+							<ModalInfoTypeB>
+								<span>{pokemon.types && pokemon.types[1].type.name.toUpperCase()}</span>
+							</ModalInfoTypeB>
 						</ModalInfoTypes>
 					</div>
 					<ModalImg>
-						<img alt='' src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png' />
+						<img
+							alt=''
+							src={
+								pokemon.id &&
+								`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${handleNumber(
+									pokemon.id
+								)}.png`
+							}
+						/>
 					</ModalImg>
 				</ModalUpMid>
 				<ModalUpDown>
