@@ -21,7 +21,7 @@ const NavbarOption = styled.div`
 	}
 `;
 
-const Navbar = () => {
+const Navbar = ({ toggleTheme }) => {
 	return (
 		<Container>
 			<NavbarOptions>
@@ -34,7 +34,7 @@ const Navbar = () => {
 				<NavbarOption>
 					<i className='fas fa-sliders-h'></i>
 				</NavbarOption>
-				<NavbarOption>
+				<NavbarOption onClick={toggleTheme}>
 					<i className='fas fa-moon'></i>
 				</NavbarOption>
 			</NavbarOptions>

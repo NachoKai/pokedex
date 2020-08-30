@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.scss";
@@ -8,6 +8,35 @@ import Card from "../src/components/Card";
 import Header from "../src/components/Header";
 import Modal from "../src/components/Modal";
 import Error from "../src/components/Error";
+
+const lightTheme = {
+	body: "#eee",
+	text: "#222",
+};
+
+const darkTheme = {
+	body: "#222",
+	text: "#eee",
+};
+
+const Container = styled.div`
+	font-family: "Lato", sans-serif;
+	width: 100%;
+	height: 100vh;
+	max-width: 100vw;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	overflow-y: auto;
+	user-select: none;
+	background: ${({ theme }) => theme.body};
+	color: ${({ theme }) => theme.text};
+
+	a {
+		text-decoration: none;
+		color: ${({ theme }) => theme.text};
+	}
+`;
 
 const CardContainer = styled.div`
 	align-items: center;
@@ -19,20 +48,33 @@ const CardContainer = styled.div`
 `;
 
 function App() {
+	const [theme, setTheme] = useState("light");
 	const [pokemon, setPokemon] = useState([]);
 	const [load, setLoad] = useState("true");
+
+	const toggleTheme = () => {
+		if (theme === "light") {
+			setTheme("dark");
+		} else {
+			setTheme("light");
+		}
+	};
 
 	useEffect(() => {
 		fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
 			.then(res => res.json())
 			.then(data =>
-				data.results.map(item => {
-					fetch(item.url)
+				data.results.map(pkmn => {
+					fetch(pkmn.url)
 						.then(res => res.json())
 						.then(allPokemon => pokemon.push(allPokemon));
 					return setPokemon(pokemon);
 				})
 			);
+
+		setTimeout(() => {
+			setLoad(false);
+		}, 2000);
 	}, [pokemon]);
 
 	const handleNumber = num => {
@@ -48,10 +90,6 @@ function App() {
 			return num;
 		}
 	};
-
-	setTimeout(() => {
-		setLoad(false);
-	}, 1000);
 
 	const [searchField, setSearchFields] = useState("");
 
@@ -70,33 +108,35 @@ function App() {
 					<Modal pokemon={pokemon} handleNumber={handleNumber} />
 				</Route>
 				<Route path='/' basename='/pokedex'>
-					<div className='App'>
-						<Navbar />
-						<Header pokemon={pokemon} onSearchChange={onSearchChange} />
-						<CardContainer>
-							{load ? (
-								<p>Loading...</p>
-							) : (
-								filteredPokemons.map((p, i) => {
-									return (
-										<Card
-											key={p.id}
-											name={p.name.charAt(0).toUpperCase() + p.name.slice(1)}
-											id={p.id}
-											kanji='フシギダネ'
-											typeA={p.types[0].type.name.toUpperCase()}
-											// typeAicon={`fas fa-${p.types[0].type.name}`}
-											typeB={p.types[1] && p.types[1].type.name.toUpperCase()}
-											// typeBicon={p.types[1] && `fas fa-${p.types[1].type.name}`}
-											img={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${handleNumber(
-												p.id
-											)}.png`}
-										/>
-									);
-								})
-							)}
-						</CardContainer>
-					</div>
+					<ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+						<Container>
+							<Navbar toggleTheme={toggleTheme} />
+							<Header pokemon={pokemon} onSearchChange={onSearchChange} />
+							<CardContainer>
+								{load ? (
+									<p>Loading...</p>
+								) : (
+									filteredPokemons.map((p, i) => {
+										return (
+											<Card
+												key={p.id}
+												name={p.name.charAt(0).toUpperCase() + p.name.slice(1)}
+												id={p.id}
+												kanji='フシギダネ'
+												typeA={p.types[0].type.name.toUpperCase()}
+												// typeAicon={`fas fa-${p.types[0].type.name}`}
+												typeB={p.types[1] && p.types[1].type.name.toUpperCase()}
+												// typeBicon={p.types[1] && `fas fa-${p.types[1].type.name}`}
+												img={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${handleNumber(
+													p.id
+												)}.png`}
+											/>
+										);
+									})
+								)}
+							</CardContainer>
+						</Container>
+					</ThemeProvider>
 				</Route>
 				<Route basename='/pokedex'>
 					<Error />
