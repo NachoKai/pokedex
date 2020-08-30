@@ -59,7 +59,7 @@ const HeaderSearchInput = styled.div`
 	}
 `;
 
-const Header = () => {
+const Header = ({ onSearchChange }) => {
 	return (
 		<Container>
 			<HeaderTitle>
@@ -72,7 +72,7 @@ const Header = () => {
 				<HeaderSearchBar>
 					<HeaderSearchInput>
 						<i className='fas fa-search'></i>
-						<input placeholder='Which Pókemon are you looking for?' />
+						<input onChange={onSearchChange} placeholder='Which Pókemon are you looking for?' />
 					</HeaderSearchInput>
 				</HeaderSearchBar>
 			</HeaderSearch>

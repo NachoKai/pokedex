@@ -47,6 +47,16 @@ function App() {
 		setLoad(false);
 	}, 1000);
 
+	const [searchField, setSearchFields] = useState("");
+
+	const onSearchChange = event => {
+		setSearchFields(event.target.value);
+	};
+
+	const filteredPokemons = pokemon.filter(monster =>
+		monster.name.toLowerCase().includes(searchField.toLowerCase())
+	);
+
 	return (
 		<Router>
 			<Switch>
@@ -56,12 +66,12 @@ function App() {
 				<Route path='/' basename='/pokedex'>
 					<div className='App'>
 						<Navbar />
-						<Header />
+						<Header pokemon={pokemon} onSearchChange={onSearchChange} />
 						<div className='card-cont'>
 							{load ? (
 								<p>Loading...</p>
 							) : (
-								pokemon.map((p, i) => {
+								filteredPokemons.map((p, i) => {
 									return (
 										<Card
 											key={p.id}

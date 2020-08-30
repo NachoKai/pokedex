@@ -21,14 +21,6 @@ const NavbarOption = styled.div`
   }
 `
 
-// .header_subtitle {
-//   h3 {
-//     font-size: 1rem;
-//     font-weight: normal;
-//     color: #868e96;
-//   }
-// }
-
 const Navbar = () => {
   return (
     <Container>
