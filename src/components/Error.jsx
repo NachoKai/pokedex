@@ -26,7 +26,7 @@ const Error = () => {
 	return (
 		<Container>
 			<div>
-				<Link to='/'>
+				<Link to='/pokedex'>
 					<i className='fas fa-arrow-left'></i>
 				</Link>
 			</div>

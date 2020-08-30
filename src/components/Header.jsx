@@ -63,7 +63,7 @@ const Header = ({ onSearchChange }) => {
 	return (
 		<Container>
 			<HeaderTitle>
-				<a href='/'>
+				<a href='/pokedex'>
 					<h1>Pókedex</h1>
 				</a>
 			</HeaderTitle>
