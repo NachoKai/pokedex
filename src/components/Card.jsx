@@ -114,7 +114,7 @@ const CardImgCircle = styled.div`
 	align-items: center;
 	justify-content: center;
 	height: auto;
-	background-color: rgba(238, 238, 238, 0.6);
+	background-color: ${p => (p.theme === "dark" ? p.theme.circle : p.theme.circle)};
 	border-radius: 50%;
 	text-align: center;
 `;
@@ -127,119 +127,43 @@ const CardDataKanji = styled.div`
 	}
 `;
 
-// .type-water {
-//   background-color: $water;
-// }
-
-// .type-fire {
-//   background-color: $fire;
-// }
-
-// .type-normal {
-//   background-color: $normal;
-// }
-
-// .type-fighting {
-//   background-color: $fighting;
-// }
-
-// .type-flying {
-//   background-color: $flying;
-// }
-
-// .type-poison {
-//   background-color: $poison;
-// }
-
-// .type-ground {
-//   background-color: $ground;
-// }
-
-// .type-rock {
-//   background-color: $rock;
-// }
-
-// .type-bug {
-//   background-color: $bug;
-// }
-
-// .type-ghost {
-//   background-color: $ghost;
-// }
-
-// .type-steel {
-//   background-color: $steel;
-// }
-
-// .type-grass {
-//   background-color: $grass;
-// }
-
-// .type-electric {
-//   background-color: $electric;
-// }
-
-// .type-psychic {
-//   background-color: $psychic;
-// }
-
-// .type-ice {
-//   background-color: $ice;
-// }
-
-// .type-dragon {
-//   background-color: $dragon;
-// }
-
-// .type-dark {
-//   background-color: $dark;
-// }
-
-// .type-fairy {
-//   background-color: $fairy;
-// }
-
-// .type-unknown {
-//   background-color: $unknown;
-// }
-
-const Card = props => {
+const Card = ({ id, name, kanji, typeAicon, typeA, typeBicon, typeB, img, theme }) => {
 	return (
 		<Link to='/modal'>
 			<CardContainer>
 				<SingleCard>
 					<div>
 						<CardDataId>
-							<span>#{props.id}</span>
+							<span>#{id}</span>
 						</CardDataId>
 
 						<CardDataName>
-							<span>{props.name}</span>
+							<span>{name}</span>
 							<CardDataKanji>
-								<span>{props.kanji}</span>
+								<span>{kanji}</span>
 							</CardDataKanji>
 						</CardDataName>
 						<CardDataTypes>
 							<CardDataTypeA>
 								<span>
-									<i className={props.typeAicon}></i>
-									{props.typeA}
+									<i className={typeAicon}></i>
+									{typeA}
 								</span>
 							</CardDataTypeA>
-							{props.typeB && (
+							{typeB && (
 								<CardDataTypeB>
 									<span>
-										<i className={props.typeBicon}></i>
-										{props.typeB}
+										<i className={typeBicon}></i>
+										{typeB}
 									</span>
 								</CardDataTypeB>
 							)}
 						</CardDataTypes>
 					</div>
 
-					<CardImgCircle>
+					<CardImgCircle theme={theme}>
 						<CardImg>
-							<img alt='' src={props.img} />
+							<img alt='' src={img} />
 						</CardImg>
 					</CardImgCircle>
 				</SingleCard>

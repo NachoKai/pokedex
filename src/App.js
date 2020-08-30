@@ -12,11 +12,13 @@ import Error from "../src/components/Error";
 const lightTheme = {
 	body: "#eee",
 	text: "#222",
+	circle: "rgba(238, 238, 238, 0.6)",
 };
 
 const darkTheme = {
 	body: "#222",
 	text: "#eee",
+	circle: "rgba(34, 34, 34, 0.6)",
 };
 
 const Container = styled.div`
@@ -105,6 +107,7 @@ function App() {
 		<Router>
 			<Switch>
 				<Route path='/modal' basename='/pokedex'>
+					<Navbar toggleTheme={toggleTheme} />
 					<Modal pokemon={pokemon} handleNumber={handleNumber} />
 				</Route>
 				<Route path='/' basename='/pokedex'>
@@ -130,6 +133,7 @@ function App() {
 												img={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${handleNumber(
 													p.id
 												)}.png`}
+												theme={theme === "light" ? lightTheme : darkTheme}
 											/>
 										);
 									})
